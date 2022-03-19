@@ -1,0 +1,102 @@
+# Use custom format
+format = """
+[┌💨](bold cyan) $hostname$username$directory$git_branch$git_metrics$memory_usage
+[│ 💨](bold cyan) $time$git_commit$git_state$git_status$conda$python$cmd_duration
+[└💨](bold cyan) """
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 30
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[cmd_duration]
+format = "⌛ [$duration](bold cyan)"
+
+[memory_usage]
+disabled = false
+format = "🐧 [${ram_pct}]($style) "
+threshold = -1
+style = "bold green"
+
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = "%T"
+style = "bold white"
+
+# 👉💻💾📦
+[hostname]
+# ssh_only = true
+format = "[wsl](bold purple) "
+# trim_at = ".companyname.com"
+disabled = false
+
+# 🥰😘😆🤣😍🤡👾👻👀
+[username]
+style_user = "cyan bold"
+format = "[haohao]($style) "
+disabled = false
+show_always = true
+
+[conda]
+format = "[Conda]($style) [$symbol$environment]($style) "
+symbol = "🚀 "
+style = "bold #ef9e9f"
+
+[python]
+format = '[Python]($style) [${symbol}${pyenv_prefix}${version}( \($virtualenv\))]($style) '
+symbol = "💡 "
+style = "bold #feee7d"
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 8
+truncation_symbol = "…/"
+style = "bold underline cyan"
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 15
+truncation_symbol = ""
+style = "bold blue"
+
+[git_commit]
+commit_hash_length = 7
+tag_symbol = "🔖 "
+disabled = false
+tag_disabled = false
+# only_detached = false
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+# ~/.config/starship.toml
+
+[git_metrics]
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+disabled = false
+
+[git_status]
+conflicted = "😭"
+ahead = "😄"
+behind = "😰"
+diverged = "😵"
+untracked = "👀"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](blue)'
+renamed = "🔀"
+deleted = "😧"
+
+[line_break]
+disabled = true
+
+# 🚀🌏🌝👉🙏
+[character]
+format="$symbol "
+#success_symbol = "[➜](bold green) "
+success_symbol = "👉"
+error_symbol = "[✗](bold red) "

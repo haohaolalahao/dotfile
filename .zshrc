@@ -34,8 +34,10 @@ export BAT_THEME="Nord"
 export COLORTERM=truecolor
 
 # autojump
-[[ -s /home/wh/.autojump/etc/profile.d/autojump.sh ]] && source /home/wh/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
+# [[ -s /home/haohao/.autojump/etc/profile.d/autojump.sh ]] && source /home/haohao/.autojump/etc/profile.d/autojump.sh
+# autoload -U compinit && compinit -u
+
+source /usr/share/autojump/autojump.sh
 
 # proxy clash 开启mix模式 port 7890
 # wsl
@@ -70,6 +72,7 @@ HISTFILE=~/.zsh_history
 # zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
+# vi mode
 # fzf-tab fzf补全
 zplug "Aloxaf/fzf-tab"
 

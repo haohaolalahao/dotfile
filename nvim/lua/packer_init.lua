@@ -66,6 +66,8 @@ return packer.startup(
                 -- {"tzachar/cmp-tabnine", run = "./install.sh"} -- tabnine 源,提供基于 AI 的智能补全
             }
         }
+        -- makers
+        use "chentau/marks.nvim"
         -- undo tree
         use {
             "mbbill/undotree"
@@ -120,6 +122,8 @@ return packer.startup(
         use "sbdchd/neoformat"
         -- vista 大纲视图
         use "liuchengxu/vista.vim"
+        -- symbols
+        use "simrat39/symbols-outline.nvim"
         -- which-key
         use "folke/which-key.nvim"
         -- Icons
@@ -181,7 +185,7 @@ return packer.startup(
                 end
             }
         )
-	
+
         use(
             {
                 "karb94/neoscroll.nvim",
@@ -198,7 +202,7 @@ return packer.startup(
                                 "<C-e>",
                                 "zt",
                                 "zz",
-                                "zb",
+                                "zb"
                             },
                             hide_cursor = true, -- Hide cursor while scrolling
                             stop_eof = true, -- Stop at <EOF> when scrolling downwards
@@ -221,5 +225,24 @@ return packer.startup(
                 "nvim-lua/plenary.nvim"
             }
         }
+   --      use {
+   --          "gelguy/wilder.nvim",
+   --          config = function()
+   --              require("wilder").setup(
+   --                  {
+   --                      vim.cmd(
+   --                          [[
+			-- call wilder#setup({'modes': [':', '/', '?']})
+			-- call wilder#set_option('use_python_remote_plugin', 0)
+			-- call wilder#set_option('pipeline', [wilder#branch(wilder#cmdline_pipeline({'use_python': 0,'fuzzy': 1, 'fuzzy_filter': wilder#lua_fzy_filter()}),wilder#vim_search_pipeline(), [wilder#check({_, x -> empty(x)}), wilder#history(), wilder#result({'draw': [{_, x -> ' ' . x}]})])])
+			-- call wilder#set_option('renderer', wilder#renderer_mux({':': wilder#popupmenu_renderer({'highlighter': wilder#lua_fzy_highlighter(), 'left': [wilder#popupmenu_devicons()], 'right': [' ', wilder#popupmenu_scrollbar()]}), '/': wilder#wildmenu_renderer({'highlighter': wilder#lua_fzy_highlighter()})}))
+			-- ]]
+   --                      )
+   --                  }
+   --              )
+   --          end
+   --      }
+    use 'dstein64/vim-startuptime'
+    use 'itchyny/vim-cursorword'
     end
 )

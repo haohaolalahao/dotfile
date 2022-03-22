@@ -16,6 +16,7 @@ EDITOR="vim"
 alias clash="bash /etc/clash/clash.sh"
 export clashdir="/etc/clash"
 
+alias ide="bash ~/.config/ide.sh"
 # bindkey 需要调整
 bindkey '\eOB'    history-substring-search-down
 bindkey "^[[1;5D" backward-word
@@ -156,5 +157,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 eval $(thefuck --alias)

@@ -33,6 +33,7 @@ precmd_functions+=(set_win_title)
 
 export BAT_THEME="Nord"
 export COLORTERM=truecolor
+export FZF_DEFAULT_COMMAND='fd'
 
 # autojump
 # [[ -s /home/haohao/.autojump/etc/profile.d/autojump.sh ]] && source /home/haohao/.autojump/etc/profile.d/autojump.sh
@@ -42,9 +43,9 @@ source /usr/share/autojump/autojump.sh
 
 # proxy clash 开启mix模式 port 7890
 # wsl
-export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+# export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
 # linux
-# export host_ip=127.0.0.1
+export host_ip=127.0.0.1
 export ALL_PROXY="http://$host_ip:7890" http_proxy="http://$host_ip:7890" https_proxy="http://$host_ip:7890"
 git config --global http.porxy "http://$host_ip:7890"
 
@@ -89,6 +90,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma-continuum/fast-syntax-highlighting"
 # enhanced ls / exa
 zplug "zpm-zsh/ls"
+zplug "zpm-zsh/material-colors"
 zplug "plugins/cp",   from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/Ubuntu", from:oh-my-zsh
@@ -97,7 +99,6 @@ zplug "plugins/command-not-found",   from:oh-my-zsh
 zplug "plugins/vscode", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 # zplug "plugins/composer", from:oh-my-zsh
-zplug "plugins/extract", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 
@@ -115,7 +116,6 @@ zplug "stedolan/jq", \
     rename-to:jq
 zplug "b4b4r07/emoji-cli", \
     on:"stedolan/jq"
-# zplug "Aloxaf/fzf-tab"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -128,18 +128,17 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-eval "$(starship init zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/miniconda3/bin/condaL' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/miniconda3/bin:$PATH"
+        export PATH="/usr/local/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -157,6 +156,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
+
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 eval $(thefuck --alias)
+eval "$(starship init zsh)"

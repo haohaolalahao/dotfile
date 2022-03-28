@@ -1,13 +1,61 @@
-# My  dotfiles
+# My dotfiles
 
 ## linux needed
 
 ```bash
-# for ubuntu 
-sudo apt-get install zsh git tar gzip curl wget
-sudo apt-get install fzf ripgrep sed fd
-sudo apt-get install autojump bat tmux
-sudo apt install build-seesntial
+# for ubuntu
+# shell
+sudo apt-get install zsh
+# git
+sudo apt-get install git
+# compress
+sudo apt-get install tar gzip
+# http
+sudo apt-get install curl wget httpie
+# tools for searching
+sudo apt-get install fzf ripgrep gawk
+# for cd
+sudo apt-get install autojump
+# tmux
+sudo apt-get install tmux
+# development
+sudo apt install build-essential cmake libboost-all-dev
+# top
+sudo apt install htop
+# tldr thefuck
+sudo apt install tldr thefuck
+# duf
+sudo apt install duf
+# all in one
+sudo apt-get install zsh git tar gzip curl wget httpie fzf ripgrep gawk autojump tmux build-essential cmake libboost-all-dev htop tldr thefuck duf
+```
+
+```bash
+# sshd
+sudo apt-get install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+
+```bash
+# fd -> find
+# https://github.com/sharkdp/fd/releases
+wget https://github.com/sharkdp/fd/releases/download/v8.3.2/fd-musl_8.3.2_amd64.deb
+sudo dpkg -i fd-musl_8.3.2_amd64.deb
+```
+
+```bash
+# bat -> cat
+# https://github.com/sharkdp/bat/releases
+wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat-musl_0.20.0_amd64.deb
+sudo dpkg -i bat-musl_0.20.0_amd64.deb
+```
+
+```bash
+# exa -> ls
+# https://github.com/ogham/exa/releases
+wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-musl-v0.10.1.zip
+sudo unzip -q exa-linux-x86_64-musl-v0.10.1.zip bin/exa -d /usr/local
 ```
 
 ```bash
@@ -18,12 +66,22 @@ sudo apt-get install nodejs
 ```
 
 ```bash
+# gdu -> du
+sudo add-apt-repository ppa:daniel-milde/gdu
+sudo apt-get update
+sudo apt-get install gdu
+```
+
+```bash
 # for ubuntu neovim
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim
 ```
 
+```bash
+sudo snap install btop --edge
+```
 ## zsh
 
 ![image-20220322182009428](.picture/image-20220322182009428.png)
@@ -49,8 +107,6 @@ sudo apt-get install neovim
 
 ![image-20220322181854901](.picture/image-20220322181854901.png)
 
-
-
 ```bash
 ~/.config/nvim/
 	-- lua
@@ -71,16 +127,16 @@ sudo apt-get install neovim
 			-- AutoSave.lua # autosave file
 			-- bufferline.lua # nvim tab
 			-- Comment.lua # nvim comment
-			-- fidget.lua # show lsp 
+			-- fidget.lua # show lsp
 			-- gitsigns.lua # show git sings in line
 			-- hop.lua # search word or character
-			-- indent-blankline.lua # indent 
+			-- indent-blankline.lua # indent
 			-- lsp_signature.lua # lsp
 			-- lspsage.lua # lsp theme
 			-- lualine.lua # nvim line
 			-- marks.lua # show marks in nvim
 			-- neoformat.lua # format file
-			-- nvim-autopairs.lua 
+			-- nvim-autopairs.lua
 			-- nvim-cmp.lua # cmp like vscode
 			-- nvim-dap-ui.lua
 			-- nvim-dap-virtual-text.lua
@@ -115,8 +171,6 @@ sudo apt-get install neovim
    git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
    ```
 
-   
-
 2. 共享系统剪切板
 
    ```
@@ -131,12 +185,11 @@ sudo apt-get install neovim
    html css vue js ts json: npm install -g prettier
    ```
 
-
 4. dap
 
    ```bash
    python: python3 -m pip install debugpy
-   
+
    -- 指定 Python 解释器路径
    -- 修改lua/core/settings.lua
    vim.g.python_path = "/usr/bin/python3.8"
@@ -180,4 +233,3 @@ Install-Module -Name Terminal-Icons -Repository PSGallery
 # install psconsoletheme
 Install-Module PSConsoleTheme
 ```
-

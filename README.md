@@ -82,6 +82,11 @@ sudo apt-get install neovim
 ```bash
 sudo snap install btop --edge
 ```
+
+```bash
+conda install -c conda-forge lazygit
+```
+
 ## zsh
 
 ![image-20220322182009428](.picture/image-20220322182009428.png)
@@ -91,7 +96,6 @@ sudo snap install btop --edge
    ```bash
    $ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
    ```
-
 2. 提示符：[Starship](https://starship.rs/)
 
    ```bash
@@ -170,13 +174,11 @@ sudo snap install btop --edge
    # for pwsh
    git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
    ```
-
 2. 共享系统剪切板
 
    ```
    sudo apt install xsel
    ```
-
 3. neoformat
 
    ```bash
@@ -184,7 +186,6 @@ sudo snap install btop --edge
    lua: npm install -g lua-fmt
    html css vue js ts json: npm install -g prettier
    ```
-
 4. dap
 
    ```bash

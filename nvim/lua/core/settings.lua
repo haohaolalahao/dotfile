@@ -55,7 +55,10 @@ vim.o.foldmethod = "indent"
 -- 指定代码折叠的最高层级为 100
 vim.o.foldlevel = 100
 -- 列宽
-vim.o.numberwidth = 4  
+vim.o.numberwidth = 4
 
+vim.opt.laststatus=3
 
 vim.g.undotree_dir = "~/.cache/nvim/undodir"
+
+vim.opt.laststatus=3

@@ -27,15 +27,15 @@ style = "bold white"
 
 # 👉💻💾📦
 [hostname]
-# ssh_only = true
-format = "[wsl](bold purple) "
+ssh_only = true
+format = "[$hostname](bold blue) "
 # trim_at = ".companyname.com"
 disabled = false
 
 # 🥰😘😆🤣😍🤡👾👻👀
 [username]
 style_user = "cyan bold"
-format = "[haohao]($style) "
+format = "[$user]($style) "
 disabled = false
 show_always = true
 

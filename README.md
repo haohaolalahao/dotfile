@@ -96,6 +96,7 @@ conda install -c conda-forge lazygit
    ```bash
    $ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
    ```
+
 2. 提示符：[Starship](https://starship.rs/)
 
    ```bash
@@ -174,11 +175,13 @@ conda install -c conda-forge lazygit
    # for pwsh
    git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
    ```
+
 2. 共享系统剪切板
 
    ```
    sudo apt install xsel
    ```
+
 3. neoformat
 
    ```bash
@@ -186,6 +189,7 @@ conda install -c conda-forge lazygit
    lua: npm install -g lua-fmt
    html css vue js ts json: npm install -g prettier
    ```
+
 4. dap
 
    ```bash

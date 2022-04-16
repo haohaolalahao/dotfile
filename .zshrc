@@ -144,7 +144,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
+conda config --set changeps1 False
 
 # bindkey
 # bindkey '\eOB'    history-substring-search-down
